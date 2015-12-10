@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>感恩节</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+
+<div class="cover"></div>
+<div class="flvplayer" id="flvplayer"></div>
+<div class="main">
+    <div class="section_1">
+        <div class="content">
+            <div class="left"></div>
+            <div class="right">
+                <div class="buy">
+                    <div class="buy_1">
+                        <span class="price" data-price="218.00"><b>￥</b><i>218.00</i><span>/</span><b class="dw">个</b></span>
+                        <div class="select">
+                            <em class="js_bshu" data-num="1">1磅</em>
+                            <ul id="js_select">
+                                <li data-bsn="1" data-price="218.00">1磅</li>
+                                <li data-bsn="2" data-price="518.00">2磅</li>
+                                <li data-bsn="3" data-price="618.00">3磅</li>
+                                <li data-bsn="5" data-price="718.00">5磅</li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="gobuy" id="js_gobuy"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="section_2">
+        <div class="content">
+            <div class="left"><img src="images/sec2_1.png"><img src="images/sec2_2.png"></div>
+            <div class="right"><img src="images/sec2_3.png"></div>
+        </div>
+        <div class="Float"></div>
+    </div>
+    <div class="section_3">
+        <div class="content">
+             <div class="box">
+                <ul id="demo">
+                    <li class="cur">
+                        <img src="images/t1.jpg" alt="" />
+                        <p class="tl"><img src="images/tl0.png" alt=""/></p>
+                        <div class="bgs"></div>
+                        </li>
+                    <li>
+                        <img src="images/t2.jpg" alt=""/>
+                        <p class="tl"><img src="images/tl1.png" alt=""/></p>
+                        <div class="bgs"></div>
+                        </li>
+                    <li>
+                        <img src="images/t3.jpg" alt=""/>
+                        <p class="tl"><img src="images/tl2.png" alt=""/></p>
+                        <div class="bgs"></div>
+                        </li>
+                    <li>
+                        <img src="images/t4.jpg" alt=""/>
+                        <p class="tl"><img src="images/tl3.png" alt=""/></p>
+                        <div class="bgs"></div>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section_4">
+        <div class="content">
+            <div class="left" id="js_vodie"><img src="images/sec4_1.jpg"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="section_5">
+        <div class="content"> 
+           <div class="top"></div>
+           <div class="center">
+                <div class="left"></div>
+                <div class="right">
+                    <p>活动期间<span>从活动页购买</span>朗姆醇栗，<span>每天上午0:00起，<br>前 100  名客户，</span>即可获得日本进口皓乐齿净澈气息<br>
+    漱口水(460ml)，奖品随订单发放。</p>
+                </div>
+           </div>
+          
+        </div>
+    </div>
+    <div class="section_6">
+        <div class="content">
+             <div class="guize">
+                   <h2>活动规则</h2>
+                   <p>
+                        1、活动时间：2015年11月12日——11月27日<br>
+                        2、活动期间从活动页购买朗姆醇栗，每天上午0:00起，前100名客户即可获得日本进口皓乐齿净澈气息漱口水,奖品随订单发放。<br>
+                        3、本活动与会员等级制度、积分、红包、优惠券、同享，但不与现金卡、专享卡、部分信用卡5折优惠同享。<br>
+                        4、一笔订单中优惠券不可叠加使用。<br>
+                        5、本次活动最终解释权在法律规定的范围内归MCAKE所有。
+                    </p>
+               </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/flvplayer.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script language="javascript">
+
+(function(){
+
+    if(isChrome=navigator.userAgent.indexOf("Chrome")>0){
+        $('.cover').show();
+    }else if(isSafari=navigator.userAgent.indexOf("Safari")>0){
+        $('.cover').hide();
+    }
+    else{
+         $('.cover').show();
+    }
+
+    var width=$(document).width();
+    var odWidth=1920;
+    var height=null;
+    var odHeight=480;
+    var mtop=null;
+    var odMtop=555;
+
+    var n=width/odWidth;
+
+    height=n*odHeight;
+    mtop=n*odMtop;
+
+     $(".main").css({"top":mtop})
+     $(".coverbig").css({"height":mtop-100})
+
+
+
+    $('#flvplayer').flvPlayer({
+        width: width,
+        height: height,
+        // 设置videoHeight=height-20，则播放器的控制工具栏默认在播放器底部显示
+        // 如果不设置则控制工具栏则默认隐藏，鼠标放到播放器上才显示出来
+        videoWidth: width,
+        videoHeight: height,
+        // isAutoPlay为flase再设置image,则以开始会显示视频封面
+        // 如果设置为true,则自动播放完视频后显示封面
+        isAutoPlay: true,
+        isRepeat: true,
+        isDownload: false,
+        isFullScreen:true,
+        backColor: '000000',
+        image: 'images/video.jpg',
+        file: 'http://media.mcake.com/480.flv'
+    });
+    
+    
+
+    $("#js_vodie").click(function(){
+        $.Dialog_09();
+
+       $('#flv_player').flvPlayer({
+            width: 809,
+            height: 560,
+            // 设置videoHeight=height-20，则播放器的控制工具栏默认在播放器底部显示
+            // 如果不设置则控制工具栏则默认隐藏，鼠标放到播放器上才显示出来
+            videoWidth: 809,
+            videoHeight: 560,
+            // isAutoPlay为flase再设置image,则以开始会显示视频封面
+            // 如果设置为true,则自动播放完视频后显示封面
+            isAutoPlay: true,
+            isRepeat: false,
+            isDownload: false,
+            isFullScreen:true,
+            image: 'images/video.jpg',
+            file: 'http://edm.mcake.com/fangli.liang/ganenjie/video/big.flv'
+        });
+
+
+    });
+
+
+
+})();
+
+
+$(document).ready(function(e){
+      var opt   =   {
+        "speed" :   "slow"      ,   //变换速度,三速度可选 slow,normal,fast;
+        "by"    :   "mouseover"     ,   //触发事件,click或者mouseover;
+        "auto"  :   true        ,   //是否自动播放;
+        "sec"   :   3000            //自动播放间隔;
+      };
+      $("#demo").IMGDEMO(opt);    
+});
+
+
+
+</script>
+</body>
+</html>
